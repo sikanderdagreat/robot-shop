@@ -1,9 +1,11 @@
 # Steps taken to launch application
+```shell
 docker-compose pull
 docker-compose up
+```
 
 # Image of homepage
-![Alt text] (./homepge.png?raw=true "Home Page")
+![Home page](homepge.png)
 
 # Why is it wrong to commit directly 
 Committing directly to the master branch allows people to push features to production without getting them code reviewed, this is especially bad if the feature causes breaking changes where if you are a business will affect customers. 
@@ -15,8 +17,18 @@ settings -> branch -> branch protection and enable “require pull request befor
 Updated index.html by replacing the stan icons and replacing the footer with
 out custom signature.
 
-Next we built the image locally by running docker compose pull and then docker compose build web to build a new web instance which we use to replace the original.
+Next we built the image locally by running 
 
-Lastly we can run it with docker compose up
+```shell
+docker compose pull
+docker compose build web 
+```
+After building a new web image we use it to replace the original.
 
-![Alt text] (./homepgeNew.png?raw=true "New Home Page")
+```shell
+Lastly we can run it with 
+```
+
+docker compose up
+
+![New home Page](homepgeNew.png)
